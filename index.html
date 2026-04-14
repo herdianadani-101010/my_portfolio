@@ -80,12 +80,12 @@ h2 {
   font-weight: bold;
 }
 
-/* SECTION */
-.section {
-  display: none;
-  margin-top: 20px;
+  .menu button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(56,189,248,0.5);
 }
 
+/* SECTION */
 .active {
   display: block;
 }
@@ -103,6 +103,18 @@ h2 {
   display: block;
   opacity: 1;
   transform: translateY(0);
+}
+
+  .card {
+  background: #1e293b;
+  padding: 15px;
+  border-radius: 12px;
+  margin-top: 15px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-3px);
 }
 
 /* GRID */
@@ -190,8 +202,6 @@ with high operational impact in real-world environments.
   </h2>
 
   <div class="card">
-    <h3>⚡ Energy Monitoring System</h3>
-
     <p><b>Overview:</b><br>
     An IoT-based electrical energy monitoring system designed to capture and analyze real-time
     electrical parameters across distribution panels (LVMDP and sub-panels).
@@ -242,8 +252,6 @@ with high operational impact in real-world environments.
   </h2>
 
   <div class="card">
-    <h3>🌊 Flood Early Warning System (EWS)</h3>
-
     <p><b>Overview:</b><br>
     An IoT-based flood early warning system utilizing multi-level float switches to detect water level changes
     and trigger automatic alerts. The system was fully developed independently, covering sensor integration,
@@ -308,8 +316,6 @@ with high operational impact in real-world environments.
   </h2>
 
   <div class="card">
-    <h3>🤖 ROBOT GA (General Affairs Automation System)</h3>
-
     <p><b>Overview:</b><br>
     An integrated operational platform built on WhatsApp to handle support requests,
     abnormalities, and event management in a structured and automated workflow.
