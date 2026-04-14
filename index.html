@@ -468,10 +468,12 @@ with high operational impact in real-world environments.
 
 </div>
 
-  <script>
+ <script>
 const lightbox = document.getElementById('lightbox');
 
 if (lightbox) {
+
+  // klik gambar
   document.querySelectorAll('.img-wrap img').forEach(img => {
     img.addEventListener('click', () => {
       lightbox.style.display = 'flex';
@@ -479,6 +481,17 @@ if (lightbox) {
     });
   });
 
+  // 🔥 klik tombol view
+  document.querySelectorAll('.zoom-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const img = btn.previousElementSibling; // ambil gambar di atasnya
+      lightbox.style.display = 'flex';
+      document.getElementById('lightbox-img').src = img.src;
+      e.stopPropagation(); // biar tidak double trigger
+    });
+  });
+
+  // klik background untuk close
   lightbox.addEventListener('click', () => {
     lightbox.style.display = 'none';
   });
