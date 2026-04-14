@@ -15,21 +15,23 @@ body {
   margin: 0;
 }
 
-/* HERO */
 header {
   text-align: center;
   padding: 80px 20px;
   background: radial-gradient(circle, #0f172a, #020617);
 }
 
-.logo {
-  width: 200px;
+.profile {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #38bdf8;
   margin-bottom: 20px;
 }
 
 h1 { color: #38bdf8; }
 
-/* LAYOUT */
 .container {
   max-width: 1000px;
   margin: auto;
@@ -49,11 +51,6 @@ h1 { color: #38bdf8; }
   margin-bottom: 20px;
 }
 
-.highlight {
-  border: 1px solid #38bdf8;
-}
-
-/* GRID DASHBOARD */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -63,14 +60,8 @@ h1 { color: #38bdf8; }
 .grid img {
   width: 100%;
   border-radius: 10px;
-  transition: 0.3s;
 }
 
-.grid img:hover {
-  transform: scale(1.03);
-}
-
-/* FOOTER */
 footer {
   text-align: center;
   padding: 20px;
@@ -82,7 +73,7 @@ footer {
 <body>
 
 <header>
-  <img src="robot-ga.png" class="logo">
+  <img src="dani_herdiana.png" class="profile">
   <h1>Dani Herdiana</h1>
   <p>Electrical Engineer | IoT | Automation | Data Intelligence</p>
 </header>
@@ -93,61 +84,93 @@ footer {
 <div>
   <div class="section-title">About</div>
   <p>
-    Engineer focused on building integrated automation systems combining IoT, WhatsApp bot, and real-time dashboard.
-    Transforming manual operations into scalable, data-driven platforms.
+    Engineer specializing in IoT-based monitoring, automation systems, and data integration.
+    Experienced in building real-time systems combining hardware, cloud, and analytics.
   </p>
 </div>
 
 <br>
 
-<!-- ROBOT GA -->
+<!-- ENERGY MONITORING -->
 <div>
-  <div class="section-title">🚀 ROBOT GA</div>
+  <div class="section-title">⚡ Energy Monitoring System</div>
 
-  <div class="card highlight">
+  <div class="card">
     <p>
-      Smart operational platform integrating WhatsApp bot, IoT control, and analytics dashboard.
+      IoT-based electrical monitoring system using ESP8266 (Wemos) and PZEM-004T sensors.
     </p>
 
     <ul>
-      <li>End-to-end ticketing automation</li>
-      <li>IoT control (AC automation)</li>
-      <li>Real-time dashboard monitoring</li>
-      <li>SLA & performance tracking</li>
-      <li>Zero ambiguity (deterministic system)</li>
+      <li>Measure voltage, current, power, energy (kWh)</li>
+      <li>Data sent to Google Sheets (real-time logging)</li>
+      <li>Dashboard visualization using Power BI</li>
+      <li>Multi-panel monitoring (LVMDP, sub panel)</li>
+    </ul>
+
+    <p><b>Architecture:</b></p>
+    <ul>
+      <li>Sensor → ESP8266 → WiFi → Google Apps Script → Google Sheets</li>
+      <li>Dashboard: Power BI</li>
     </ul>
   </div>
-</div>
-
-<br>
-
-<!-- DASHBOARD -->
-<div>
-  <div class="section-title">Dashboard System</div>
 
   <div class="card">
     <div class="grid">
-      <img src="dashboard1.png">
-      <img src="dashboard2.png">
-      <img src="dashboard3.png">
-      <img src="dashboard4.png">
+      <img src="energy_monitoring1.png">
+      <img src="energy_monitoring2.png">
+      <img src="energy_monitoring3.png">
     </div>
   </div>
 </div>
 
 <br>
 
-<!-- IMPACT -->
+<!-- EWS BANJIR -->
 <div>
-  <div class="section-title">Business Impact</div>
+  <div class="section-title">🌊 Flood Early Warning System (EWS)</div>
+
+  <div class="card">
+    <p>
+      Low-cost flood detection system using 4 float switches and ESP8266 (Wemos D1),
+      integrated with Telegram and WhatsApp bot for real-time alerting.
+    </p>
+
+    <ul>
+      <li>4 level detection: Aman, Siaga 3, Siaga 2, Siaga 1</li>
+      <li>Realtime notification (Telegram & WhatsApp)</li>
+      <li>Data logging to Google Sheets</li>
+      <li>Cost implementation ± Rp 120.000</li>
+    </ul>
+
+    <p><b>Working Principle:</b></p>
+    <ul>
+      <li>Float switch triggers based on water level</li>
+      <li>ESP8266 reads digital input</li>
+      <li>Data sent to cloud + notification triggered</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <div class="grid">
+      <img src="ews1.png">
+      <img src="ews2.png">
+      <img src="ews3.png">
+    </div>
+  </div>
+</div>
+
+<br>
+
+<!-- ROBOT GA -->
+<div>
+  <div class="section-title">🤖 ROBOT GA System</div>
 
   <div class="card">
     <ul>
-      <li>Full automation (no manual process)</li>
-      <li>Real-time monitoring & transparency</li>
-      <li>Energy efficiency optimization</li>
-      <li>Data-driven decision making</li>
-      <li>Cost saving up to ± Rp 600 juta – 1.2 Miliar</li>
+      <li>WhatsApp-based ticketing system</li>
+      <li>IoT automation integration</li>
+      <li>Dashboard monitoring & SLA tracking</li>
+      <li>Cost saving up to ± Rp 1 Miliar (in-house)</li>
     </ul>
   </div>
 </div>
