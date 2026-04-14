@@ -35,29 +35,31 @@ h2 {
 .container {
   max-width: 1000px;
   margin: auto;
-  padding: 20px 30px; /* ⬅️ ini bikin kiri kanan lega */
+  padding: 20px 30px;
 }
 
-/* BUTTON MENU */
+/* ===== MENU PROJECT ===== */
 .menu {
   display: flex;
-  justify-content: space-evenly; /* ⬅️ biar nyebar kiri–kanan */
+  justify-content: space-evenly;
   align-items: flex-start;
-  gap: 40px; /* ⬅️ jarak antar project lebih lega */
+  gap: 40px;
   flex-wrap: wrap;
   margin-top: 30px;
-  padding: 0 20px; /* ⬅️ kasih jarak kiri kanan */
+  padding: 0 20px;
 }
 
-  .menu-item {
+.menu-item {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+/* ✅ FIX: SAMAKAN TINGGI GAMBAR */
 .menu-img {
   width: 130px;
-  max-width: 100%;
+  height: 100px; /* ⬅️ ini kunci sejajar */
+  object-fit: contain; /* ⬅️ tidak kepotong */
   margin-bottom: 12px;
   opacity: 0.9;
   transition: all 0.3s ease;
@@ -69,7 +71,7 @@ h2 {
   opacity: 1;
   filter: drop-shadow(0 0 18px rgba(56,189,248,0.7));
 }
-  
+
 .menu button {
   background: #38bdf8;
   border: none;
@@ -78,19 +80,15 @@ h2 {
   cursor: pointer;
   color: #020617;
   font-weight: bold;
+  transition: 0.3s;
 }
 
-  .menu button:hover {
+.menu button:hover {
   transform: translateY(-3px);
   box-shadow: 0 6px 20px rgba(56,189,248,0.5);
 }
 
-/* SECTION */
-.active {
-  display: block;
-}
-
-  /* TRANSITION SECTION */
+/* ===== SECTION ANIMATION ===== */
 .section {
   display: none;
   margin-top: 20px;
@@ -105,7 +103,8 @@ h2 {
   transform: translateY(0);
 }
 
-  .card {
+/* ===== CARD ===== */
+.card {
   background: #1e293b;
   padding: 15px;
   border-radius: 12px;
@@ -117,7 +116,7 @@ h2 {
   transform: translateY(-3px);
 }
 
-/* GRID */
+/* ===== GRID IMAGE ===== */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
@@ -129,13 +128,6 @@ h2 {
   height: 180px;
   object-fit: cover;
   border-radius: 8px;
-}
-
-.card {
-  background: #1e293b;
-  padding: 15px;
-  border-radius: 10px;
-  margin-top: 15px;
 }
 </style>
 </head>
