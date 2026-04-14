@@ -491,34 +491,33 @@ with high operational impact in real-world environments.
 
 </div>
 
- <script>
-document.addEventListener("DOMContentLoaded", () => {
+<script>
+window.onload = function() {
 
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = document.getElementById('lightbox-img');
 
-  // klik SEMUA area (gambar + tombol + wrapper)
-  document.querySelectorAll('.img-wrap').forEach(wrap => {
+  document.querySelectorAll('.img-wrap').forEach(function(wrap) {
 
-    wrap.addEventListener('click', () => {
-      const img = wrap.querySelector('img');
+    wrap.onclick = function() {
+      const img = this.querySelector('img');
 
       if (img) {
         lightbox.style.display = 'flex';
         lightboxImg.src = img.src;
       }
-    });
+    };
 
   });
 
-  // klik luar gambar = close
-  lightbox.addEventListener('click', (e) => {
+  // close saat klik background
+  lightbox.onclick = function(e) {
     if (e.target === lightbox) {
       lightbox.style.display = 'none';
     }
-  });
+  };
 
-});
+};
 </script>
 
 <script>
