@@ -44,6 +44,21 @@ h1 { color: #38bdf8; }
   margin-top: 20px;
 }
 
+  .menu-item {
+  text-align: center;
+}
+
+.menu-img {
+  width: 110px;
+  margin-bottom: 10px;
+  transition: 0.3s;
+  filter: drop-shadow(0 0 10px rgba(56,189,248,0.4));
+}
+
+.menu-img:hover {
+  transform: scale(1.05);
+}
+
 .menu button {
   background: #38bdf8;
   border: none;
@@ -62,6 +77,21 @@ h1 { color: #38bdf8; }
 
 .active {
   display: block;
+}
+
+  /* TRANSITION SECTION */
+.section {
+  display: none;
+  margin-top: 20px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.4s ease;
+}
+
+.section.active {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* GRID */
@@ -116,15 +146,30 @@ Key strengths include system integration, automation design, and building practi
 with high operational impact in real-world environments.
 </p>
 
-<p><b>For detailed projects, please click on the sections below:</b></p>
+<p style="text-align:center;">
+  <b>For detailed projects, please click on the sections below:</b>
+</p>
 
-<!-- MENU -->
+<h3 style="text-align:center; margin-top:20px;">Projects</h3>
+
 <div class="menu">
-  <button onclick="showSection('energy')">⚡ Energy Monitoring</button>
-  <button onclick="showSection('ews')">🌊 EWS Banjir</button>
-  <button onclick="showSection('robot')">🤖 ROBOT GA</button>
-</div>
 
+  <div class="menu-item">
+    <img src="energy.png" class="menu-img">
+    <button onclick="showSection('energy')">⚡ Energy Monitoring</button>
+  </div>
+
+  <div class="menu-item">
+    <img src="ews.png" class="menu-img">
+    <button onclick="showSection('ews')">🌊 EWS Banjir</button>
+  </div>
+
+  <div class="menu-item">
+    <img src="robot.png" class="menu-img">
+    <button onclick="showSection('robot')">🤖 ROBOT GA</button>
+  </div>
+
+</div>
 <!-- ENERGY -->
 <div id="energy" class="section">
   <div class="card">
@@ -170,13 +215,6 @@ with high operational impact in real-world environments.
     </ul>
   </div>
 
-  <h3 style="margin-top:20px;">Projects</h3>
-
-<div class="menu">
-  <button onclick="showSection('energy')">⚡ Energy Monitoring</button>
-  <button onclick="showSection('ews')">🌊 EWS Banjir</button>
-  <button onclick="showSection('robot')">🤖 ROBOT GA</button>
-</div>
 </div>
 
 <!-- EWS -->
@@ -323,9 +361,24 @@ with high operational impact in real-world environments.
 
 <script>
 function showSection(id) {
-  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
+  const sections = document.querySelectorAll('.section');
+
+  sections.forEach(s => {
+    s.classList.remove('active');
+  });
+
+  const target = document.getElementById(id);
+
+  if (target) {
+    setTimeout(() => {
+      target.classList.add('active');
+    }, 100); // delay kecil biar animasi smooth
+  }
 }
+
+window.addEventListener('DOMContentLoaded', () => {
+  showSection('robot'); // default
+});
 </script>
 
 </body>
