@@ -112,8 +112,46 @@ Building integrated system from sensor → cloud → dashboard.
 <!-- ENERGY -->
 <div id="energy" class="section">
   <div class="card">
-    <h3>Energy Monitoring</h3>
-    <p>ESP8266 + PZEM → Google Sheets → Power BI</p>
+    <h3>⚡ Energy Monitoring System</h3>
+
+    <p><b>Overview:</b><br>
+    An IoT-based electrical energy monitoring system designed to capture and analyze real-time
+    electrical parameters across distribution panels (LVMDP and sub-panels).
+    This system was fully designed and developed independently, covering hardware integration,
+    data transmission, and dashboard analytics.
+    </p>
+
+    <p><b>Objectives:</b></p>
+    <ul>
+      <li>Enable real-time monitoring of energy consumption</li>
+      <li>Reduce electrical energy waste</li>
+      <li>Provide historical data for analysis and optimization</li>
+    </ul>
+
+    <p><b>System Architecture:</b></p>
+    <ul>
+      <li>PZEM-004T → measures voltage, current, power, and energy (kWh)</li>
+      <li>ESP8266 (Wemos) → handles serial communication and WiFi transmission</li>
+      <li>Google Apps Script → acts as API endpoint</li>
+      <li>Google Sheets → serves as centralized database</li>
+      <li>Power BI → data visualization and analytics dashboard</li>
+    </ul>
+
+    <p><b>Data Flow:</b></p>
+    <ul>
+      <li>Sensors capture electrical parameters in real-time</li>
+      <li>ESP8266 sends data via HTTP requests</li>
+      <li>Data is logged into Google Sheets</li>
+      <li>Power BI automatically updates dashboard visualization</li>
+    </ul>
+
+    <p><b>Key Value:</b></p>
+    <ul>
+      <li>Fully self-developed end-to-end system (hardware to analytics)</li>
+      <li>Low-cost IoT implementation</li>
+      <li>Real-time monitoring capability</li>
+      <li>Supports data-driven energy efficiency decisions</li>
+    </ul>
   </div>
 
   <div class="grid">
@@ -126,8 +164,53 @@ Building integrated system from sensor → cloud → dashboard.
 <!-- EWS -->
 <div id="ews" class="section">
   <div class="card">
-    <h3>Flood Early Warning System</h3>
-    <p>Float switch + ESP8266 + Telegram + WhatsApp</p>
+    <h3>🌊 Flood Early Warning System (EWS)</h3>
+
+    <p><b>Overview:</b><br>
+    An IoT-based flood early warning system utilizing multi-level float switches to detect water level changes
+    and trigger automatic alerts. The system was fully developed independently, covering sensor integration,
+    cloud logging, and multi-platform notification.
+    </p>
+
+    <p><b>Objectives:</b></p>
+    <ul>
+      <li>Provide early detection of potential flooding</li>
+      <li>Enable real-time alerting without manual monitoring</li>
+      <li>Deliver a low-cost and scalable monitoring solution</li>
+    </ul>
+
+    <p><b>System Architecture:</b></p>
+    <ul>
+      <li>4 Float Switch sensors (Safe, Alert Level 3, Level 2, Level 1)</li>
+      <li>ESP8266 (Wemos D1) as main controller</li>
+      <li>Google Sheets as centralized data logging</li>
+      <li>Telegram Bot for real-time alert notifications</li>
+      <li>WhatsApp Bot for user interaction and status queries</li>
+    </ul>
+
+    <p><b>System Flow:</b></p>
+    <ul>
+      <li>Water level rises → float switch is triggered</li>
+      <li>ESP8266 reads digital input from sensors</li>
+      <li>Status is sent to cloud (Google Sheets)</li>
+      <li>Automatic alerts are triggered via Telegram and WhatsApp</li>
+    </ul>
+
+    <p><b>User Accessibility:</b></p>
+    <ul>
+      <li>All employees can access real-time flood status via WhatsApp bot</li>
+      <li>Users can request water level updates through chat commands</li>
+      <li>Significantly improves communication speed and situational awareness</li>
+    </ul>
+
+    <p><b>Key Advantages:</b></p>
+    <ul>
+      <li>Ultra low-cost implementation (~Rp 120,000)</li>
+      <li>Real-time monitoring without delay</li>
+      <li>Multi-platform integration (WhatsApp & Telegram)</li>
+      <li>Historical data logging for analysis</li>
+      <li>Improves operational communication efficiency across employees</li>
+    </ul>
   </div>
 
   <div class="grid">
@@ -140,8 +223,74 @@ Building integrated system from sensor → cloud → dashboard.
 <!-- ROBOT -->
 <div id="robot" class="section">
   <div class="card">
-    <h3>ROBOT GA</h3>
-    <p>WhatsApp bot + ticketing + dashboard + automation system</p>
+    <h3>🤖 ROBOT GA (General Affairs Automation System)</h3>
+
+    <p><b>Overview:</b><br>
+    An integrated operational platform built on WhatsApp to handle support requests,
+    abnormalities, and event management in a structured and automated workflow.
+    The system was fully designed and developed independently, covering bot logic,
+    data handling, and dashboard integration.
+    </p>
+
+    <p><b>Problems:</b></p>
+    <ul>
+      <li>Unstructured manual request handling</li>
+      <li>No status tracking system</li>
+      <li>No centralized historical data</li>
+    </ul>
+
+    <p><b>Solution:</b></p>
+    <ul>
+      <li>WhatsApp bot as the main entry point</li>
+      <li>Automated ticketing system</li>
+      <li>Real-time dashboard monitoring</li>
+      <li>Automated notifications and escalation</li>
+    </ul>
+
+    <p><b>System Architecture:</b></p>
+    <ul>
+      <li>User → WhatsApp</li>
+      <li>Bot Engine (Node.js)</li>
+      <li>Google Sheets (single source of truth database)</li>
+      <li>Web Dashboard (monitoring & control)</li>
+      <li>Telegram (notification & forwarding layer)</li>
+    </ul>
+
+    <p><b>System Flow:</b></p>
+    <ul>
+      <li>User submits request via WhatsApp</li>
+      <li>Bot performs rule-based classification</li>
+      <li>Automatic ticket generation</li>
+      <li>Data stored in Google Sheets</li>
+      <li>Operator updates ticket status</li>
+      <li>System sends automatic notifications</li>
+    </ul>
+
+    <p><b>Key Features:</b></p>
+    <ul>
+      <li>Deterministic classification (no NLP ambiguity)</li>
+      <li>Automated SLA tracking</li>
+      <li>User rating system</li>
+      <li>Multi-role access (User / Operator / Executive)</li>
+      <li>Real-time dashboard analytics</li>
+    </ul>
+
+    <p><b>User & Operational Impact:</b></p>
+    <ul>
+      <li>Simplifies reporting process for all employees</li>
+      <li>Improves response speed and operational efficiency</li>
+      <li>Provides full transparency for both employees and management</li>
+      <li>Increases team productivity through structured workflow</li>
+      <li>Employees can independently check their ticket status via WhatsApp</li>
+    </ul>
+
+    <p><b>Business Impact:</b></p>
+    <ul>
+      <li>Fully digital and automated operational process</li>
+      <li>Improved visibility and accountability</li>
+      <li>Significant efficiency improvement across operations</li>
+      <li>Cost saving up to ± Rp 1 Billion (in-house development)</li>
+    </ul>
   </div>
 
   <div class="grid">
